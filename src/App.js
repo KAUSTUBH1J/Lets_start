@@ -14,16 +14,18 @@ function App() {
       msg : massage,
       type: type
     });
-    console.log(alert);
+    setTimeout(()=>{
+      setAlert(null)
+    },1500)
   }
 
   const toggle = () =>{
     if(mode == 'light'){
       setMode("dark");
-      showAlert("Dark mode is applied","succes")
+      showAlert("Dark mode is applied","success")
     }else if(mode == "dark"){
       setMode('light');
-      showAlert("Light mode is applied","succes")
+      showAlert("Light mode is applied","success")
     }
     console.log(mode);
   }

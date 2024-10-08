@@ -1,6 +1,7 @@
 import React from "react";
 
 function Signal(){
+    
     return(
         <>
             <div className="Signal">
