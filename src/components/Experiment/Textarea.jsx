@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-export default function Textarea() {
+export default function Textarea(props) {
     const [placeholdertext, setPlaceholder] = useState("Enter the text here...");
     const [text, setText] = useState("");
     const [search, setSearch] = useState("");
@@ -39,8 +39,8 @@ export default function Textarea() {
 
     return (
         <>
-            <div className="container my-3">
-                <h2>Form Hanlding</h2>
+            <div className="container my-3 ">
+                <h2>Text Analyzer </h2>
                 <textarea className='form-control my-2' onChange={Hanldingchange} value={text} placeholder={placeholdertext} rows="8"></textarea>
                 <button className='btn btn-primary mx-2' onClick={toUpper}>Convert to UpperCase</button>
                 <button className='btn btn-primary mx-2' onClick={toLower}>Convert to LowerCase</button>
