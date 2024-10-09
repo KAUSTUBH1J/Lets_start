@@ -1,10 +1,14 @@
 import React,{useState} from 'react';
-import logo from './logo.svg';
+
+
 import './App.css';
+import Home from './components/Home';
 import Navbar from './components/Template/Navbar'
 import TextArea from './components/Experiment/Textarea'
-import Signal from './components/Traffic_Light/Signal'
 import Alert from './components/Template/Alert'
+import About from './components/Experiment/About'
+import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+
 function App() {
   const [mode, setMode]   = useState('light');
   const [alert, setAlert] = useState(null);
@@ -31,11 +35,21 @@ function App() {
   }
   return (
     <>
+    <Router>
       <Navbar Title="Let's Start" toggle={toggle} mode={mode}/>
-      <Alert alert={alert}/>
+      {/* <Alert alert={alert}/>
       <div className='main-body container h-100'>
         <TextArea mode={mode}/>
       </div>
+      <div className='container'>
+        
+      </div> */}
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/TextAnalyzer' element={<TextArea mode={mode}/>}></Route>
+        <Route path='/about' element={<About/>}></Route>
+      </Routes>
+      </Router>
     </>
   );  
 }

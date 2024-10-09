@@ -45,13 +45,7 @@ export default function Textarea(props) {
                 <button className='btn btn-primary mx-2' onClick={toUpper}>Convert to UpperCase</button>
                 <button className='btn btn-primary mx-2' onClick={toLower}>Convert to LowerCase</button>
                 <button className='btn btn-danger mx-2' onClick={clearAll}>clear</button>
-                <div className='my-2'>
-                    {/* <select name="" id="">
-                        <option value=""></option>
-                    </select> */}
-                    <input type="text" value={search} onChange={handleSearch} />
-                    <button className='btn btn-danger mx-2' onClick={doOperation}>Enter</button>
-                </div>
+                
 
                 <div className='my-3'>
                     <p>{searchResult}</p>
