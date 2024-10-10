@@ -8,6 +8,7 @@ import TextArea from './components/Experiment/Textarea'
 import Alert from './components/Template/Alert'
 import About from './components/Experiment/About'
 import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import NewsComponents from './components/Experiment/NewsComponents';
 
 function App() {
   const [mode, setMode]   = useState('light');
@@ -48,6 +49,7 @@ function App() {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/TextAnalyzer' element={<TextArea mode={mode}/>}></Route>
         <Route path='/about' element={<About/>}></Route>
+        <Route path='/News' element={<NewsComponents/>} />
       </Routes>
       </Router>
     </>
