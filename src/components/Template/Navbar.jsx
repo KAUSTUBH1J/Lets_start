@@ -29,6 +29,21 @@ export default function Navbar(props) {
                             <li><a className="dropdown-item" href="#">Something else here</a></li> */}
                         </ul>
                     </li>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        News
+                        </a>
+                        <ul className="dropdown-menu">
+                            <li><Link className=" dropdown-item " to="/business">Business</Link></li>
+                            <li><Link className=" dropdown-item " to="/entertainment">Entertainment </Link></li>
+                            <li><Link className=" dropdown-item " to="/general">General</Link></li>
+                            <li><Link className=" dropdown-item " to="/health">Health </Link></li>
+                            <li><Link className=" dropdown-item " to="/science">Science </Link></li>
+                            <li><Link className=" dropdown-item " to="/sports">sports</Link></li>
+                            <li><Link className=" dropdown-item " to="/technology">Technology </Link></li>        
+                        
+                        </ul>
+                    </li>
                     <li className="nav-item">
                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>

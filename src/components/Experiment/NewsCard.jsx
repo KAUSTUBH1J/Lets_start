@@ -1,34 +1,19 @@
 import React,{Component} from "react";
 
-// export default function NewsCard(props){
-//     return(
-//         <>
-//             <div class="card m-2" style={{width: '18rem'}}>
-//                 <img src="..." class="card-img-top" alt="..."/>
-//                 <div class="card-body"> 
-//                     <h5 class="card-title">{props.title}</h5>
-//                     <p class="card-text">{props.description}</p>
-//                     <a href="#" class="btn btn-primary">Go somewhere</a>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
+
 
 export default class NewsCard extends Component {
-    constructor(){
-        super();
-    }
+    
     render(){
-        let { title, description} = this.props;
+        let { title, description,imageUrl,leranUrl} = this.props;
         return(
             <>
-                <div class="card m-2" style={{width: '18rem'}}>
-                    <img src="..." class="card-img-top" alt="..."/>
-                    <div class="card-body"> 
-                        <h5 class="card-title">{title}</h5>
-                        <p class="card-text">{description}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div className="card m-2" >
+                    <img src={imageUrl} className="card-img-top" alt="..."/>
+                    <div className="card-body"> 
+                        <h5 className="card-title">{title.slice(0,33)}{title.length > 33 ? '...': ''}</h5>
+                        <p className="card-text">{description.slice(0,100)}{description.length > 100 ? '...': ''}</p>
+                        <a href={leranUrl} target="_blank" className="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </>
