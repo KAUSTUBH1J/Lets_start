@@ -114,8 +114,8 @@ export default class NewsComponents extends Component{
                         <div className='container my-3'  style={{display: 'flex',flexWrap: 'wrap','justifyContent': 'start'}}>
                             <div className="row">
                                 {
-                                        this.state.articles.map((element)=>{
-                                        return  <div className='col-md-4' key={element.url}>
+                                        this.state.articles.map((element,key)=>{
+                                        return  <div className='col-md-4' key={key}>
                                             <Card  title={element.title? element.title : ''} Author={element.author} publishedAt={element.publishedAt} source={element.source.name} imageUrl={element.urlToImage?element.urlToImage:''} description={element.description?element.description:''} leranUrl={element.url?element.url:''}/>
                                         </div>
                                     })
