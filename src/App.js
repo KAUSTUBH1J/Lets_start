@@ -9,12 +9,18 @@ import Alert from './components/Template/Alert'
 import About from './components/Experiment/About'
 import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import NewsComponents from './components/Experiment/NewsComponents';
+import LoadingBar from 'react-top-loading-bar'
 
 function App() {
   const [mode, setMode]   = useState('light');
   const [alert, setAlert] = useState(null);
-  const [newsCount, setNewsCount] = useState(6);
+  const [newsCount, setNewsCount] = useState(5);
   const [projectName, setProjectName] = useState("Let's Start");
+  const [progress, setProgress] = useState(0)
+  const APIKey = process.env.REACT_APP_NEWS_API_KEY;
+  const setProgressBar = (progress)=>{
+    setProgress(progress);
+  }
   const showAlert = (massage, type) =>{
     setAlert({
       msg : massage,
@@ -39,24 +45,22 @@ function App() {
     <>
     <Router>
       <Navbar Title={projectName} toggle={toggle} mode={mode}/>
-      {/* <Alert alert={alert}/>
-      <div className='main-body container h-100'>
-        <TextArea mode={mode}/>
-      </div>
-      <div className='container'>
-        
-      </div> */}
+      <LoadingBar
+        color='#f11946'
+        progress={progress}
+        height={3}
+      />
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/TextAnalyzer' element={<TextArea mode={mode}/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        <Route exact path='/business' element={<NewsComponents key="business" pageSize={newsCount} category='business' Title={projectName} />} />
-        <Route exact path='/entertainment' element={<NewsComponents key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
-        <Route exact path='/general' element={<NewsComponents key="general" pageSize={newsCount} category='general' Title={projectName}/>} />
-        <Route exact path='/health' element={<NewsComponents key="health" pageSize={newsCount} category='health' Title={projectName}/>} />
-        <Route exact path='/science' element={<NewsComponents key="science" pageSize={newsCount} category='science' Title={projectName}/>} />
-        <Route exact path='/sports' element={<NewsComponents key="sports" pageSize={newsCount} category='sports' Title={projectName}/>} />
-        <Route exact path='/technology' element={<NewsComponents key="technology" pageSize={newsCount} category='technology' Title={projectName}/>} />
+        <Route path='/' element={<Home setProgressBar={setProgressBar} />}></Route>
+        <Route path='/TextAnalyzer' element={<TextArea setProgressBar={setProgressBar} mode={mode}/>}></Route>
+        <Route path='/about' element={<About setProgressBar={setProgressBar} />}></Route>
+        <Route exact path='/business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
+        <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
+        <Route exact path='/general' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="general" pageSize={newsCount} category='general' Title={projectName}/>} />
+        <Route exact path='/health' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="health" pageSize={newsCount} category='health' Title={projectName}/>} />
+        <Route exact path='/science' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="science" pageSize={newsCount} category='science' Title={projectName}/>} />
+        <Route exact path='/sports' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="sports" pageSize={newsCount} category='sports' Title={projectName}/>} />
+        <Route exact path='/technology' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="technology" pageSize={newsCount} category='technology' Title={projectName}/>} />
       </Routes>
       </Router>
     </>

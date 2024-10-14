@@ -5,7 +5,7 @@ export default function Textarea(props) {
     const [text, setText] = useState("");
     const [search, setSearch] = useState("");
     const [searchResult, setSearchResult] = useState(''); 
-
+    
     const toUpper = () => {
         setText(text.toUpperCase());
         setPlaceholder(placeholdertext.toUpperCase());
@@ -38,6 +38,7 @@ export default function Textarea(props) {
     }
 
     return (
+        
         <>
             <div className="container my-3 ">
                 <h2>Text Analyzer </h2>
