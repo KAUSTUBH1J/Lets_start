@@ -45,9 +45,9 @@ export default class NewsComponents extends Component{
       }
     ]
 
-    constructor(){
+    constructor(props){
 
-        super();
+        super(props);
         this.state ={
             articles: this.article,
             page: 1,
@@ -56,52 +56,12 @@ export default class NewsComponents extends Component{
         }
         console.log("constructor")
         console.log(this.state)
-        
+        document.title = `${this.props.category.toUpperCase().slice(0,1)}${this.props.category.toLowerCase().slice(1)} - ${this.props.Title}`
     }
-    handlePreClick = async () =>{
-        console.log("previews");
 
+    updateNews = async ()=>{
         let page = this.state.page;
-        let Url = `https://newsapi.org/v2/top-headlines?country=us&country=${this.props.category}&apiKey=5025f98abfe448428f9c301fb31a9a02&page=${page - 1}&pageSize=${this.props.pageSize}`;
-        this.setState({
-            loading: true
-        })
-        let data = await fetch(Url);
-        let parsedata = await data.json();
-
-        this.setState ({
-            articles: parsedata.articles,
-            page: this.state.page - 1,
-            loading: false
-        })
-    }
-    handleNextClick = async () =>{
-        console.log("next")
-
-        if( !(this.state.page +1  > Math.ceil(this.state.totalResults/this.props.pageSize) ) ){
-
-            let page = this.state.page;
-            let Url = `https://newsapi.org/v2/top-headlines?country=us&country=${this.props.category}&apiKey=5025f98abfe448428f9c301fb31a9a02&page=${page + 1}&pageSize=${this.props.pageSize}`;
-            console.log(Url);
-            this.setState({
-                loading: true
-            });
-            let data = await fetch(Url);
-            let parsedata = await data.json();
-            console.log(this.state)
-            this.setState ({
-                articles: parsedata.articles,
-                page: this.state.page + 1,
-                loading: false
-            });
-            console.log(this.state);
-        }
-    }
-
-    async componentDidMount(){
-
-        let page = this.state.page;
-        let Url = `https://newsapi.org/v2/top-headlines?country=us&country=${this.props.category}&apiKey=5025f98abfe448428f9c301fb31a9a02&page=1&pageSize=${this.props.pageSize}`;
+        let Url = `https://newsapi.org/v2/top-headlines?country=us&country=${this.props.category}&apiKey=5025f98abfe448428f9c301fb31a9a02&page=${page + 1}&pageSize=${this.props.pageSize}`;
         this.setState({
             loading: true
         })
@@ -114,6 +74,35 @@ export default class NewsComponents extends Component{
             totalResults : parsedata.totalResults,
             loading: false
         })
+    }
+    handlePreClick = async () =>{
+        console.log("previews");
+        this.setState ({
+            page: this.state.page - 1,
+        })
+        this.updateNews();
+    }
+    handleNextClick = async () =>{
+        console.log("next")
+
+        if( !(this.state.page +1  > Math.ceil(this.state.totalResults/this.props.pageSize) ) ){
+
+            this.setState (
+                (prevState) => ({
+                    page: prevState.page + 1,
+                }),
+                () => {
+                    this.updateNews();  // Call updateNews in the callback after the state is updated
+                }
+            )
+            // this.updateNews();
+            console.log(this.state);
+        }
+    }
+
+    async componentDidMount(){
+
+        this.updateNews();
 
     }
     
@@ -126,11 +115,11 @@ export default class NewsComponents extends Component{
                         New's of {this.props.category.toUpperCase().slice(0,1)}{this.props.category.toLowerCase().slice(1)}
                     </h1>
                     {this.state.loading ?<div className='d-flex justify-content-center'><Loader/></div>:''}
-                    <div style={{display: 'flex',flexWrap: 'wrap','justifyContent': 'space-between'}}>
+                    <div style={{display: 'flex',flexWrap: 'wrap','justifyContent': 'start'}}>
                         {
                             this.state.loading ? '' : this.state.articles.map((element)=>{
                                 return  <div className='col-md-4'>
-                                    <Card  title={element.title? element.title : ''} imageUrl={element.urlToImage?element.urlToImage:''} description={element.description?element.description:''} leranUrl={element.url?element.url:''}/>
+                                    <Card  title={element.title? element.title : ''} Author={element.author} publishedAt={element.publishedAt} source={element.source.name} imageUrl={element.urlToImage?element.urlToImage:''} description={element.description?element.description:''} leranUrl={element.url?element.url:''}/>
                                 </div>
                             })
                         }
