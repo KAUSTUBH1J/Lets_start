@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Navbar(props) {
   return (
     <>
-        <nav className={`navbar  navbar-expand-lg ${props.mode == 'light' ? 'bg-body-tertiary' : 'bg-dark' } `}  data-bs-theme={`${props.mode == 'light' ? 'light':'dark'}`}>
+        <nav className={`navbar fixed-top  navbar-expand-lg ${props.mode == 'light' ? 'bg-body-tertiary' : 'bg-dark' } `}  data-bs-theme={`${props.mode == 'light' ? 'light':'dark'}`}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">{props.Title}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@ export default function Navbar(props) {
                         </a>
                         <ul className="dropdown-menu">
                             <li><Link className=" dropdown-item " to="/TextAnalyzer">TextAnalyzer</Link></li>
-                            {/* <li><Link className=" dropdown-item " to="/News">News </Link></li> */}
+                            <li><Link className=" dropdown-item " to="/Calculater">Calculater </Link></li>
                             {/* <li><hr className="dropdown-divider"/></li>
                             <li><a className="dropdown-item" href="#">Something else here</a></li> */}
                         </ul>
@@ -34,13 +34,13 @@ export default function Navbar(props) {
                         News
                         </a>
                         <ul className="dropdown-menu">
-                            <li><Link className=" dropdown-item " to="/business">Business</Link></li>
-                            <li><Link className=" dropdown-item " to="/entertainment">Entertainment </Link></li>
-                            <li><Link className=" dropdown-item " to="/general">General</Link></li>
-                            <li><Link className=" dropdown-item " to="/health">Health </Link></li>
-                            <li><Link className=" dropdown-item " to="/science">Science </Link></li>
-                            <li><Link className=" dropdown-item " to="/sports">sports</Link></li>
-                            <li><Link className=" dropdown-item " to="/technology">Technology </Link></li>        
+                            <li><Link className=" dropdown-item" to="/business">Business</Link></li>
+                            <li><Link className=" dropdown-item" to="/entertainment">Entertainment </Link></li>
+                            <li><Link className=" dropdown-item" to="/general">General</Link></li>
+                            <li><Link className=" dropdown-item" to="/health">Health </Link></li>
+                            <li><Link className=" dropdown-item" to="/science">Science </Link></li>
+                            <li><Link className=" dropdown-item" to="/sports">sports</Link></li>
+                            <li><Link className=" dropdown-item" to="/technology">Technology </Link></li>        
                         
                         </ul>
                     </li>
@@ -56,7 +56,7 @@ export default function Navbar(props) {
                 {/* </form> */}
                 </div>
             </div>
-            </nav>
+        </nav>
     </>
   )
 }

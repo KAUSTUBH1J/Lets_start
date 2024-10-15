@@ -15,7 +15,7 @@ const NewsComponents = (props) =>{
     const updateNews = async ()=>{
         
         console.log('updateNews');
-        let Url = `https://newsapi.org/v2/top-headlines?country=us&country=${props.category}&apiKey=${props.ApiKey}&page=${page}&pageSize=${props.pageSize}`;
+        let Url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${props.ApiKey}&page=${page}&pageSize=${props.pageSize}`;
         setLoading(true);
         console.log(Url);
         let data = await fetch(Url);
@@ -52,11 +52,12 @@ const NewsComponents = (props) =>{
 
     const fetchMoreData = async () => {
         console.log('fetchMoreData');
-        setPage(page + 1)
-        console.log(this.state);
+        
         // const url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apikey=dbe57b028aeb41e285a226a94865f7a7&page=${page}&pageSize=${props.pageSize}`;
-        let url = `https://newsapi.org/v2/top-headlines?country=us&country=${props.category}&apiKey=${props.ApiKey}&page=${page}&pageSize=${props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${props.ApiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+        setPage(page + 1)
         let data = await fetch(url);
+
         console.log(url);
         let parsedData = await data.json()
         console.log(parsedData);
@@ -66,15 +67,9 @@ const NewsComponents = (props) =>{
         setLoading(false);
     };
     
-
-    
     useEffect(() => {
         updateNews();
     }, [])
-    
-
-    
-    
     
     return(
         

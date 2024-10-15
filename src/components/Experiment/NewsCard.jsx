@@ -1,7 +1,6 @@
 import React,{Component} from "react";
 
 
-
 const NewsCard = (props)=> {
     let { title, description,imageUrl,leranUrl,Author,publishedAt,source} = props;
     return(
