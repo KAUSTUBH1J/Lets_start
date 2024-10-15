@@ -4,7 +4,9 @@ export default function Calculater() {
     const [count, setCount] = useState(0);
     const [num1, setNum1]   = useState(0);
     const [num2, setNum2]   = useState(0);
+    const [option, setOption]   = useState('');
     const [result, setResult]   = useState(0);
+    
     const setnum1Value = (event) => {
         setNum1(event.target.value);
     }
@@ -12,9 +14,33 @@ export default function Calculater() {
         setNum2(event.target.value);
     }
 
+    const setOpt = (event) =>{
+        setOption(event.target.value)
+    }
     useEffect(()=>{
-        console.log('call useEffect')
-    },[setnum1Value,setnum2Value])
+        let opt = document.getElementById('opration').value;
+        console.log(opt);
+        switch(opt){
+            case 'add':
+                setResult(parseInt(num1)+parseInt(num2));
+                break;
+            case 'sub':
+                setResult(parseInt(num1)-parseInt(num2));
+                break;
+            case 'mul':
+                setResult(parseInt(num1)*parseInt(num2));
+                break;
+            case 'div':
+                setResult(parseInt(num1)/parseInt(num2));
+                break;
+            case 'mod':
+                setResult(parseInt(num1)/parseInt(num2));
+                break;
+        }
+        return(
+            console.log('result in Return '+result)
+        )
+    },[num1,num2,option])
 
     function handleCount(move){
         if(move == 'increment'){
@@ -33,10 +59,17 @@ export default function Calculater() {
 
                 <div className='d-flex my-3'>
                     <input type="number" className='form-control w-20 mx-2' value={num1} onChange={setnum1Value}/>
-                    {/* <input type="number" className='form-control w-20 mx-2'/> */}+
+                    <select name="" id="opration" onChange={setOpt}>
+                        <option value="add">+</option>
+                        <option value="sub">-</option>
+                        <option value="add">*</option>
+                        <option value="div">/</option>
+                        <option value="mod">%</option>
+
+                    </select>
                     <input type="number" className='form-control w-20 mx-2' value={num2}  onChange={setnum2Value}/>
-                    <span></span>
                 </div>
+                <h4>Result: {result}</h4>
             </div>
         </>
     )
