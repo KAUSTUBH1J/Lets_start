@@ -15,9 +15,7 @@ export default function Navbar(props) {
                     <li className="nav-item">
                         <Link className="nav-link active" to="/">Home</Link>
                     </li>
-                    <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
-                    </li>
+                    
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Experiment
@@ -25,6 +23,7 @@ export default function Navbar(props) {
                         <ul className="dropdown-menu">
                             <li><Link className=" dropdown-item " to="/TextAnalyzer">TextAnalyzer</Link></li>
                             <li><Link className=" dropdown-item " to="/Calculater">Calculater </Link></li>
+                            <li><Link className=" dropdown-item " to="/StudentList">Student List </Link></li>
                             {/* <li><hr className="dropdown-divider"/></li>
                             <li><a className="dropdown-item" href="#">Something else here</a></li> */}
                         </ul>
@@ -44,8 +43,8 @@ export default function Navbar(props) {
                         
                         </ul>
                     </li>
-                    <li className="nav-item">
-                    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                    <li className="nav-item ">
+                        <Link className="dropdown-item" to="/about">About</Link>
                     </li>
                 </ul>
                 {/* <form className="d-flex" role="search"> */}
