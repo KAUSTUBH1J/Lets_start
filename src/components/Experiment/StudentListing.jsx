@@ -14,10 +14,10 @@ const StudentListing = () => {
     
 
     const handleEdit = (rollno) => {
-        var getStud = student.filter(stud => stud.rollNo == rollno);
+        var getStud = student.filter(stud => stud.rollNo === rollno);
 
 
-        // if(student.isEdit == 1){
+        // if(student.isEdit === 1){
         //     setStudent({...student,isEdit:0});
         // }else{
         //     setStudent({...student,isEdit:1});
@@ -51,14 +51,14 @@ const StudentListing = () => {
             setName('');
             setAge('');
             
-            if(student.length == 0){
+            if(student.length === 0){
                 console.log('length is zero')
                 setStudent([Array]);
             }else{
                 setStudent([...student, Array]);
             }
             console.log(student);
-            // student.length == 0 ? setStudent(Array) : setStudent([...student, Array]);
+            // student.length === 0 ? setStudent(Array) : setStudent([...student, Array]);
             console.log(student.length);
         }else{
             alert('Please fill the Form ')

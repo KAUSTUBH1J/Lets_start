@@ -35,10 +35,10 @@ function App() {
   }
 
   const toggle = () =>{
-    if(mode == 'light'){
+    if(mode ===  'light'){
       setMode("dark");
       showAlert("Dark mode is applied","success")
-    }else if(mode == "dark"){
+    }else if(mode ===  "dark"){
       setMode('light');
       showAlert("Light mode is applied","success")
     }

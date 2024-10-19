@@ -53,9 +53,9 @@ export default function Calculater() {
     },[num1,num2,option])
 
     function handleCount(move){
-        if(move == 'increment'){
+        if(move === 'increment'){
             setCount(count+1);
-        }else if(move == 'decriment'){
+        }else if(move === 'decriment'){
             setCount(count-1);
         }
     }
