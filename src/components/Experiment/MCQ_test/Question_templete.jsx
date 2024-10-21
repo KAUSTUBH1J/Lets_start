@@ -1,8 +1,9 @@
 import React,{useRef} from 'react'
 
 export default function Question_templete(props) {
+    const [showNote, setShownote] = React.useState(false);
     const optionBtn = useRef([]);
-
+    const Note = useRef('');
     props.opt.forEach(
         (_, index) =>{ 
             optionBtn.current[index] = optionBtn.current[index] ||  React.createRef();
@@ -28,6 +29,8 @@ export default function Question_templete(props) {
             e.target.style.background = "red";
             e.target.style.color = "#fff";
         }
+        setShownote(true);
+        Note.current.innerHTML  = props.note ? props.note :''  ;
         // console.log(selectOption ,correctOption)
     }
     return (
@@ -50,7 +53,13 @@ export default function Question_templete(props) {
                         }
                         
                     </div>
-                
+                    
+                    
+                        <div className={`note ${showNote ? '': 'd-none'}`}>
+                            <hr />
+                            <b>Note: </b><p ref={Note}></p>
+                        </div>
+                    
                 </div>
             </div>
         </div>

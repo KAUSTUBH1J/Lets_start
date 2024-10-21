@@ -5,7 +5,7 @@ import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Template/Navbar'
 import TextArea from './components/Experiment/Textarea'
-import Alert from './components/Template/Alert'
+// import Alert from './components/Template/Alert'
 import About from './components/Experiment/About'
 import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import NewsComponents from './components/Experiment/NewsComponents';
