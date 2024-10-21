@@ -12,6 +12,7 @@ import NewsComponents from './components/Experiment/NewsComponents';
 import LoadingBar from 'react-top-loading-bar'
 import Calculater from './components/Experiment/Calculater';
 import StudentListing from './components/Experiment/StudentListing';
+import MCQ_test from './components/Experiment/MCQ_test/test_templete'
 
 function App() {
   const [mode, setMode]   = useState('light');
@@ -64,7 +65,7 @@ function App() {
           <Route path='/about' element={<About setProgressBar={setProgressBar} />}></Route>
           <Route path='/Calculater' element={<Calculater setProgressBar={setProgressBar} />}></Route>
           <Route path='/StudentList' element={<StudentListing setProgressBar={setProgressBar} />}></Route>
-
+          <Route path='/MCQ_test' element={<MCQ_test setProgressBar={setProgressBar} />}></Route>
 
           <Route exact path='business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
           <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
