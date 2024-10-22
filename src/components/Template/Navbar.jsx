@@ -1,10 +1,11 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from 'react-router-dom';
-
+import { GobleState } from '../../App';
 export default function Navbar(props) {
+    const {mode, toggle} = useContext(GobleState);
   return (
     <>
-        <nav className={`navbar fixed-top  navbar-expand-lg ${props.mode === 'light' ? 'bg-body-tertiary' : 'bg-dark' } `}  data-bs-theme={`${props.mode === 'light' ? 'light':'dark'}`}>
+        <nav className={`navbar fixed-top  navbar-expand-lg ${mode === 'light' ? 'bg-body-tertiary' : 'bg-dark' } `}  data-bs-theme={`${mode === 'light' ? 'light':'dark'}`}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">{props.Title}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,8 +49,8 @@ export default function Navbar(props) {
                 </ul>
                 {/* <form className="d-flex" role="search"> */}
                 <div className='form-check form-switch text' >
-                    <input className='form-check-input' type="checkbox" id='mode' onClick={props.toggle} />
-                    <label className={`nav-item ${props.mode === 'light' ? '':'text-white'}`} htmlFor="mode" >Enble Dark Mode</label>
+                    <input className='form-check-input' type="checkbox" id='mode' onClick={() => toggle()} />
+                    <label className={`nav-item ${mode === 'light' ? '':'text-white'}`} htmlFor="mode" >Enble Dark Mode</label>
                 </div>
                 {/* </form> */}
                 </div>

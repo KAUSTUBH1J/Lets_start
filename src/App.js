@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, createContext} from 'react';
 
 
 import './App.css';
@@ -13,6 +13,11 @@ import LoadingBar from 'react-top-loading-bar'
 import Calculater from './components/Experiment/Calculater';
 import StudentListing from './components/Experiment/StudentListing';
 import MCQ_test from './components/Experiment/MCQ_test/test_templete'
+
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
+
+export const GobleState = createContext(0);
 
 function App() {
   const [mode, setMode]   = useState('light');
@@ -47,8 +52,10 @@ function App() {
   }
   return (
     <>
-      <Router>
-        <Navbar Title={projectName} toggle={toggle} mode={mode}/>
+      <Router >
+        <Provider store={store}>
+      <GobleState.Provider value={{mode: mode,toggle:toggle}} >
+        <Navbar Title={projectName} />
         <LoadingBar
           color='#f11946'
           progress={progress}
@@ -75,6 +82,8 @@ function App() {
           <Route exact path='/sports' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="sports" pageSize={newsCount} category='sports' Title={projectName}/>} />
           <Route exact path='/technology' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="technology" pageSize={newsCount} category='technology' Title={projectName}/>} />
         </Routes>
+        </GobleState.Provider>
+        </Provider>
       </Router>
     </>
   );  
