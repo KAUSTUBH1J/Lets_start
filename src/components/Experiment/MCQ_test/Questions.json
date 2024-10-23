@@ -1,0 +1,838 @@
+[
+  {
+    "question": "Which of the following is used to style components in React?",
+    "options": [
+      "CSS Modules",
+      "Inline CSS",
+      "Styled Components",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "explainer": "React allows you to style components using various methods such as CSS Modules, Inline CSS, and Styled Components."
+  },
+  {
+    "question": "What is the purpose of lazy loading in React?",
+    "options": [
+      "To fetch data from an API",
+      "To defer loading components until they are needed",
+      "To optimize form rendering",
+      "To manage the component's lifecycle"
+    ],
+    "answer": "To defer loading components until they are needed",
+    "explainer": "Lazy loading defers the loading of components until they are needed, improving performance and reducing initial load times."
+  },
+  {
+    "question": "Which lifecycle method is used to clean up side effects in React?",
+    "options": [
+      "componentWillUnmount",
+      "useEffect cleanup function",
+      "componentDidMount",
+      "useMemo"
+    ],
+    "answer": "useEffect cleanup function",
+    "explainer": "The cleanup function inside useEffect is used to clean up side effects when the component unmounts or before the next effect runs."
+  },
+  {
+    "question": "What does React.memo do?",
+    "options": [
+      "It optimizes the performance of functional components by memoizing them",
+      "It manages state in functional components",
+      "It fetches data from an API",
+      "It connects React to the backend"
+    ],
+    "answer": "It optimizes the performance of functional components by memoizing them",
+    "explainer": "React.memo is used to optimize the performance of functional components by memoizing them to prevent unnecessary re-renders."
+  },
+  {
+    "question": "Which of the following is a state management solution in React?",
+    "options": [
+      "useEffect",
+      "Redux",
+      "useState",
+      "Axios"
+    ],
+    "answer": "Redux",
+    "explainer": "Redux is a state management solution in React that helps manage global state across the entire application."
+  },
+  {
+    "question": "What is the purpose of the Context API in React?",
+    "options": [
+      "To fetch data from a REST API",
+      "To avoid prop drilling by providing global state",
+      "To update the DOM directly",
+      "To handle component lifecycle"
+    ],
+    "answer": "To avoid prop drilling by providing global state",
+    "explainer": "The Context API allows you to share state globally across the component tree, avoiding the need to pass props through intermediate components."
+  },
+  {
+    "question": "Which of the following is used to connect React with a backend API?",
+    "options": [
+      "useState",
+      "React Router",
+      "Axios",
+      "useMemo"
+    ],
+    "answer": "Axios",
+    "explainer": "Axios is a popular library used to connect React with a backend API and make HTTP requests to fetch data."
+  },
+  {
+    "question": "What is the primary goal of the Capstone Project in Week 3?",
+    "options": [
+      "To build a small demo component",
+      "To test understanding of JavaScript ES6+ features",
+      "To apply all learned concepts and build a full React application",
+      "To revise HTML and CSS"
+    ],
+    "answer": "To apply all learned concepts and build a full React application",
+    "explainer": "The Capstone Project is a culmination of all learned concepts where a complete React application is built and integrated with APIs."
+  },
+  {
+    "question": "What is a benefit of using Styled Components in React?",
+    "options": [
+      "Global styling",
+      "Scoped styles with dynamic theming",
+      "Inline styles only",
+      "No styling capabilities"
+    ],
+    "answer": "Scoped styles with dynamic theming",
+    "explainer": "Styled Components allow for scoped styles that can change dynamically based on props, promoting better maintainability."
+  },
+  {
+    "question": "What is the main purpose of the useEffect hook?",
+    "options": [
+      "To manage component state",
+      "To handle side effects in functional components",
+      "To manage form inputs",
+      "To render lists"
+    ],
+    "answer": "To handle side effects in functional components",
+    "explainer": "The useEffect hook is used to handle side effects like data fetching, subscriptions, or manually changing the DOM."
+  },
+  {
+    "question": "When should you use the cleanup function in useEffect?",
+    "options": [
+      "To reset component state",
+      "To unsubscribe from subscriptions or clean up resources",
+      "To trigger a re-render",
+      "To modify the DOM directly"
+    ],
+    "answer": "To unsubscribe from subscriptions or clean up resources",
+    "explainer": "The cleanup function in useEffect is called before the component unmounts or before the effect runs again, to clean up resources."
+  },
+  {
+    "question": "What does React.lazy() do?",
+    "options": [
+      "It loads components only when they are needed",
+      "It fetches data from an API",
+      "It handles state management",
+      "It updates the DOM"
+    ],
+    "answer": "It loads components only when they are needed",
+    "explainer": "React.lazy() allows you to load components dynamically, improving performance by splitting code and loading components only when needed."
+  },
+  {
+    "question": "What is the purpose of React Router?",
+    "options": [
+      "To manage component state",
+      "To style components",
+      "To handle routing in Single Page Applications",
+      "To optimize performance"
+    ],
+    "answer": "To handle routing in Single Page Applications",
+    "explainer": "React Router is a library that enables navigation between different components or pages in a Single Page Application."
+  },
+  {
+    "question": "Which hook is best for memoizing values to avoid expensive calculations?",
+    "options": [
+      "useEffect",
+      "useState",
+      "useMemo",
+      "useContext"
+    ],
+    "answer": "useMemo",
+    "explainer": "useMemo is used to memoize expensive calculations so that they are only recalculated when their dependencies change."
+  },
+  {
+    "question": "What does the Context API help with?",
+    "options": [
+      "Fetching data",
+      "State management and avoiding prop drilling",
+      "Routing",
+      "Styling components"
+    ],
+    "answer": "State management and avoiding prop drilling",
+    "explainer": "The Context API provides a way to share values between components without passing props through every level of the component tree."
+  },
+  {
+    "question": "Which of the following is a valid way to create a Context in React?",
+    "options": [
+      "const MyContext = createContext();",
+      "const MyContext = useContext();",
+      "const MyContext = React.createContext();",
+      "const MyContext = new Context();"
+    ],
+    "answer": "const MyContext = React.createContext();",
+    "explainer": "createContext() is a function that creates a Context object in React, allowing for state sharing."
+  },
+  {
+    "question": "What is the main purpose of Redux in a React application?",
+    "options": [
+      "To handle routing",
+      "To manage global application state",
+      "To style components",
+      "To optimize performance"
+    ],
+    "answer": "To manage global application state",
+    "explainer": "Redux is a state management library that provides a single source of truth for the application's state, making it easier to manage state across components."
+  },
+  {
+    "question": "Which of the following is true about Redux reducers?",
+    "options": [
+      "They modify the state directly",
+      "They return a new state based on the action",
+      "They can have side effects",
+      "They are synchronous functions"
+    ],
+    "answer": "They return a new state based on the action",
+    "explainer": "Reducers in Redux are pure functions that take the current state and an action as arguments and return a new state without mutating the original state."
+  },
+  {
+    "question": "What is the purpose of the Provider component in Redux?",
+    "options": [
+      "To connect components to the Redux store",
+      "To create actions",
+      "To manage component state",
+      "To optimize performance"
+    ],
+    "answer": "To connect components to the Redux store",
+    "explainer": "The Provider component makes the Redux store available to any nested components that need to access the state."
+  },
+  {
+    "question": "What does the connect() function do in Redux?",
+    "options": [
+      "It connects a React component to the Redux store",
+      "It connects multiple stores together",
+      "It connects components to the Context API",
+      "It connects to external APIs"
+    ],
+    "answer": "It connects a React component to the Redux store",
+    "explainer": "The connect() function is used to connect React components to the Redux store, allowing them to access the state and dispatch actions."
+  },
+  {
+    "question": "Which of the following is NOT a middleware in Redux?",
+    "options": [
+      "redux-thunk",
+      "redux-saga",
+      "redux-logger",
+      "react-router"
+    ],
+    "answer": "react-router",
+    "explainer": "React Router is a library for routing in React applications, while redux-thunk, redux-saga, and redux-logger are all middleware for managing side effects and logging in Redux."
+  },
+  {
+    "question": "What does useDispatch hook do in React-Redux?",
+    "options": [
+      "It retrieves the state from the Redux store",
+      "It allows you to dispatch actions to the Redux store",
+      "It connects components to the Redux store",
+      "It manages component state"
+    ],
+    "answer": "It allows you to dispatch actions to the Redux store",
+    "explainer": "The useDispatch hook provides a reference to the dispatch function from the Redux store, allowing components to send actions."
+  },
+  {
+    "question": "Which of the following is a method for making API calls in React?",
+    "options": [
+      "useState",
+      "useContext",
+      "Axios",
+      "useMemo"
+    ],
+    "answer": "Axios",
+    "explainer": "Axios is a promise-based HTTP client that allows you to make API calls from your React application."
+  },
+  {
+    "question": "Which of the following best describes how to handle API errors in React?",
+    "options": [
+      "Ignore them",
+      "Use try/catch blocks and set an error state",
+      "Always show a console log",
+      "Wrap API calls in a conditional statement"
+    ],
+    "answer": "Use try/catch blocks and set an error state",
+    "explainer": "Using try/catch blocks allows you to handle errors gracefully by updating the component state with error information."
+  },
+  {
+    "question": "What is the main goal of the Capstone Project in Week 3?",
+    "options": [
+      "To practice styling components",
+      "To build a complete application integrating all learned concepts",
+      "To learn about Redux",
+      "To test knowledge on JavaScript basics"
+    ],
+    "answer": "To build a complete application integrating all learned concepts",
+    "explainer": "The Capstone Project is intended to apply all learned concepts to build a fully functional application."
+  },
+  {
+    "question": "What is the primary function of the createStore function in Redux?",
+    "options": [
+      "To create the application UI",
+      "To set up the Redux store with reducers and middleware",
+      "To manage component state",
+      "To handle API requests"
+    ],
+    "answer": "To set up the Redux store with reducers and middleware",
+    "explainer": "The createStore function initializes the Redux store, combining the reducers and any middleware."
+  },
+  {
+    "question": "Which of the following techniques is used to improve performance in React applications?",
+    "options": [
+      "Code splitting",
+      "Inline styling",
+      "Global CSS",
+      "Excessive re-renders"
+    ],
+    "answer": "Code splitting",
+    "explainer": "Code splitting is a technique that allows you to load parts of the application on demand, improving initial load times and performance."
+  },
+  {
+    "question": "How can you pass data to a styled component?",
+    "options": [
+      "By directly modifying its styles",
+      "Through props",
+      "By using global styles",
+      "By using class names only"
+    ],
+    "answer": "Through props",
+    "explainer": "You can pass data to styled components through props, allowing for dynamic styling based on component state."
+  },
+  {
+    "question": "What is the purpose of the Redux DevTools extension?",
+    "options": [
+      "To optimize performance",
+      "To manage state",
+      "To debug and inspect Redux state changes",
+      "To connect to APIs"
+    ],
+    "answer": "To debug and inspect Redux state changes",
+    "explainer": "Redux DevTools is a browser extension that helps developers debug and track changes in the Redux store."
+  },
+  {
+    "question": "Which of the following hooks is used to manage local state in a functional component?",
+    "options": [
+      "useReducer",
+      "useMemo",
+      "useEffect",
+      "useContext"
+    ],
+    "answer": "useReducer",
+    "explainer": "The useReducer hook is used for managing local state in a more complex way than useState, especially for managing state transitions."
+  },
+  {
+    "question": "What is the effect of using multiple useEffect hooks in a component?",
+    "options": [
+      "They will run in parallel",
+      "Only the first one will run",
+      "They will run in the order they are defined",
+      "Only one can exist in a component"
+    ],
+    "answer": "They will run in the order they are defined",
+    "explainer": "Multiple useEffect hooks will execute in the order they are defined, allowing for modular side effect management."
+  },
+  {
+    "question": "What is a common way to fetch data on component mount in React?",
+    "options": [
+      "Using useEffect with an empty dependency array",
+      "Using useState only",
+      "Using componentDidUpdate",
+      "Using useContext"
+    ],
+    "answer": "Using useEffect with an empty dependency array",
+    "explainer": "Using useEffect with an empty dependency array triggers the effect only once when the component mounts."
+  },
+  {
+    "question": "How do you pass a callback function as a prop to a child component?",
+    "options": [
+      "By declaring it in the child component",
+      "By using props.children",
+      "By defining it in the parent and passing it as a prop",
+      "By using state management"
+    ],
+    "answer": "By defining it in the parent and passing it as a prop",
+    "explainer": "You can pass callback functions from a parent component to a child component as props, allowing for interaction between them."
+  },
+  {
+    "question": "Which of the following is NOT a valid way to apply styles in React?",
+    "options": [
+      "CSS files",
+      "Styled Components",
+      "CSS Modules",
+      "Direct DOM manipulation"
+    ],
+    "answer": "Direct DOM manipulation",
+    "explainer": "React encourages using its own methods for styling, such as CSS files or styled-components, rather than directly manipulating the DOM."
+  },
+  {
+    "question": "What does the term 'prop drilling' refer to?",
+    "options": [
+      "Passing props through many levels of components",
+      "Using props to manage state",
+      "Fetching props from a parent component",
+      "Handling API responses"
+    ],
+    "answer": "Passing props through many levels of components",
+    "explainer": "Prop drilling occurs when you need to pass data through multiple layers of components that don't need the data, making it harder to manage."
+  },
+  {
+    "question": "What is the purpose of the useCallback hook?",
+    "options": [
+      "To memoize functions to avoid unnecessary re-renders",
+      "To manage local state",
+      "To connect to the Redux store",
+      "To fetch data from APIs"
+    ],
+    "answer": "To memoize functions to avoid unnecessary re-renders",
+    "explainer": "useCallback is used to memoize functions, preventing them from being recreated on every render unless their dependencies change."
+  },
+  {
+    "question": "What type of data structure does Redux use for its state?",
+    "options": [
+      "Flat object",
+      "Tree structure",
+      "Array only",
+      "Key-value pairs only"
+    ],
+    "answer": "Flat object",
+    "explainer": "Redux maintains the application state as a single flat object, making it easy to access and manage state across components."
+  },
+  {
+    "question": "What is the role of middleware in Redux?",
+    "options": [
+      "To connect components",
+      "To handle side effects and asynchronous actions",
+      "To manage styles",
+      "To optimize performance"
+    ],
+    "answer": "To handle side effects and asynchronous actions",
+    "explainer": "Middleware in Redux is used to extend its capabilities, allowing for handling asynchronous actions or logging."
+  },
+  {
+    "question": "Which method is used to update state in Redux?",
+    "options": [
+      "setState",
+      "dispatch",
+      "updateState",
+      "changeState"
+    ],
+    "answer": "dispatch",
+    "explainer": "In Redux, actions are dispatched to update the state, which is then handled by reducers."
+  },
+  {
+    "question": "What does a Redux action typically contain?",
+    "options": [
+      "Only the new state",
+      "A type and an optional payload",
+      "Only a type",
+      "A payload without a type"
+    ],
+    "answer": "A type and an optional payload",
+    "explainer": "A Redux action is a plain object that must have a type property and can optionally contain a payload."
+  },
+  {
+    "question": "How do you combine multiple reducers in Redux?",
+    "options": [
+      "Using combineReducers",
+      "By merging them manually",
+      "By nesting them",
+      "Using a context provider"
+    ],
+    "answer": "Using combineReducers",
+    "explainer": "The combineReducers function in Redux allows you to combine multiple reducers into a single reducer."
+  },
+  {
+    "question": "What is the purpose of the Redux store?",
+    "options": [
+      "To manage component state",
+      "To handle API requests",
+      "To hold the state of the application",
+      "To render components"
+    ],
+    "answer": "To hold the state of the application",
+    "explainer": "The Redux store is a centralized place where the application's state is stored and managed."
+  },
+  {
+    "question": "Which lifecycle method is primarily used for data fetching in class components?",
+    "options": [
+      "componentDidUpdate",
+      "componentDidMount",
+      "render",
+      "componentWillUnmount"
+    ],
+    "answer": "componentDidMount",
+    "explainer": "The componentDidMount lifecycle method is called after a component is mounted, making it ideal for data fetching."
+  },
+  {
+    "question": "What does the term 'state immutability' mean in Redux?",
+    "options": [
+      "State can be modified directly",
+      "State should not be modified directly; new copies should be created",
+      "State can be copied as is",
+      "State should be stored as an object"
+    ],
+    "answer": "State should not be modified directly; new copies should be created",
+    "explainer": "In Redux, state immutability ensures that the state is not directly modified but instead new copies of state are created to reflect changes."
+  },
+  {
+    "question": "How can you optimize performance when rendering large lists in React?",
+    "options": [
+      "By using index as keys",
+      "By implementing pagination or infinite scroll",
+      "By rendering all items at once",
+      "By ignoring keys"
+    ],
+    "answer": "By implementing pagination or infinite scroll",
+    "explainer": "Using pagination or infinite scroll can significantly improve performance by only rendering visible items at any time."
+  },
+  {
+    "question": "What is the purpose of a reducer in Redux?",
+    "options": [
+      "To handle API requests",
+      "To process actions and return a new state",
+      "To manage component state",
+      "To fetch data"
+    ],
+    "answer": "To process actions and return a new state",
+    "explainer": "Reducers in Redux take the current state and an action as arguments and return a new state based on the action type."
+  },
+  {
+    "question": "Which of the following is true about controlled components in React?",
+    "options": [
+      "They store their own state internally",
+      "Their state is managed by React",
+      "They cannot be used with forms",
+      "They do not allow user input"
+    ],
+    "answer": "Their state is managed by React",
+    "explainer": "Controlled components have their value controlled by React state, allowing for better form management."
+  },
+  {
+    "question": "What is the purpose of the setState function in class components?",
+    "options": [
+      "To fetch data from an API",
+      "To update the component's state",
+      "To connect to the Redux store",
+      "To manage props"
+    ],
+    "answer": "To update the component's state",
+    "explainer": "The setState function is used in class components to update the state, triggering a re-render of the component."
+  },
+  {
+    "question": "What is the purpose of the memoization technique?",
+    "options": [
+      "To store previous calculations and avoid recomputation",
+      "To optimize API calls",
+      "To manage state in Redux",
+      "To connect to external libraries"
+    ],
+    "answer": "To store previous calculations and avoid recomputation",
+    "explainer": "Memoization stores the results of expensive function calls and returns the cached result when the same inputs occur again."
+  },
+  {
+    "question": "What is the role of the Provider in the Context API?",
+    "options": [
+      "To connect to Redux",
+      "To provide the context value to child components",
+      "To manage state",
+      "To handle routing"
+    ],
+    "answer": "To provide the context value to child components",
+    "explainer": "The Provider component makes the context available to its child components, allowing them to access the context value."
+  },
+  {
+    "question": "Which hook is commonly used to perform side effects in functional components?",
+    "options": [
+      "useState",
+      "useEffect",
+      "useContext",
+      "useReducer"
+    ],
+    "answer": "useEffect",
+    "explainer": "The useEffect hook allows you to perform side effects, such as data fetching or subscriptions, in functional components."
+  },
+  {
+    "question": "What does the term 'thunk' refer to in Redux?",
+    "options": [
+      "A synchronous action",
+      "A function that returns a function for handling asynchronous logic",
+      "A middleware for managing state",
+      "A type of reducer"
+    ],
+    "answer": "A function that returns a function for handling asynchronous logic",
+    "explainer": "Thunk is a middleware that allows you to write action creators that return a function instead of an action, enabling asynchronous operations."
+  },
+  {
+    "question": "How do you ensure that a component only re-renders when specific props change?",
+    "options": [
+      "By using PureComponent or React.memo",
+      "By avoiding state management",
+      "By using class components only",
+      "By implementing getDerivedStateFromProps"
+    ],
+    "answer": "By using PureComponent or React.memo",
+    "explainer": "PureComponent and React.memo help prevent unnecessary re-renders by performing a shallow comparison of props."
+  },
+  {
+    "question": "What is the purpose of the useContext hook?",
+    "options": [
+      "To manage local component state",
+      "To consume context values in functional components",
+      "To connect to Redux",
+      "To handle side effects"
+    ],
+    "answer": "To consume context values in functional components",
+    "explainer": "The useContext hook allows you to access the value of a context directly in functional components."
+  },
+  {
+    "question": "What does the term 'lazy loading' refer to in React?",
+    "options": [
+      "Loading all components at once",
+      "Loading components only when they are needed",
+      "Preloading components for faster performance",
+      "Rendering components without a loading state"
+    ],
+    "answer": "Loading components only when they are needed",
+    "explainer": "Lazy loading in React allows you to load components on demand, reducing the initial load time and improving performance."
+  },
+  {
+    "question": "What is the significance of the dependency array in useEffect?",
+    "options": [
+      "To specify the component's state",
+      "To control when the effect runs",
+      "To define the component's props",
+      "To connect to external libraries"
+    ],
+    "answer": "To control when the effect runs",
+    "explainer": "The dependency array in useEffect determines when the effect runs by specifying which values to watch for changes."
+  },
+  {
+    "question": "What is the purpose of the useMemo hook?",
+    "options": [
+      "To optimize performance by memoizing expensive calculations",
+      "To manage component state",
+      "To connect to the Redux store",
+      "To perform side effects"
+    ],
+    "answer": "To optimize performance by memoizing expensive calculations",
+    "explainer": "The useMemo hook helps prevent expensive calculations on every render by memoizing the result based on dependencies."
+  },
+  {
+    "question": "What is the purpose of a key in React lists?",
+    "options": [
+      "To style list items",
+      "To uniquely identify elements and optimize rendering",
+      "To manage state",
+      "To control component lifecycle"
+    ],
+    "answer": "To uniquely identify elements and optimize rendering",
+    "explainer": "Keys help React identify which items have changed, are added, or are removed, improving rendering performance."
+  },
+  {
+    "question": "How can you share state between components in React?",
+    "options": [
+      "By using props",
+      "By directly modifying the DOM",
+      "By creating separate functions for each component",
+      "By using local storage"
+    ],
+    "answer": "By using props",
+    "explainer": "Props are used to pass data and share state between parent and child components in React."
+  },
+  {
+    "question": "What is the significance of returning a cleanup function in useEffect?",
+    "options": [
+      "To update state",
+      "To manage side effects when the component unmounts or updates",
+      "To optimize rendering",
+      "To fetch data"
+    ],
+    "answer": "To manage side effects when the component unmounts or updates",
+    "explainer": "The cleanup function returned from useEffect is executed when the component unmounts or before the effect re-runs, helping to prevent memory leaks."
+  },
+  {
+    "question": "What is the main benefit of using React Router?",
+    "options": [
+      "To manage component state",
+      "To create a single-page application with navigation",
+      "To connect to Redux",
+      "To handle API calls"
+    ],
+    "answer": "To create a single-page application with navigation",
+    "explainer": "React Router enables navigation and routing in single-page applications, allowing different components to be displayed based on the URL."
+  },
+  {
+    "question": "What does the term 'higher-order component' (HOC) refer to?",
+    "options": [
+      "A component that cannot be rendered",
+      "A function that takes a component and returns a new component",
+      "A component that manages state",
+      "A component that connects to Redux"
+    ],
+    "answer": "A function that takes a component and returns a new component",
+    "explainer": "Higher-order components are functions that take a component as an argument and return a new component, typically for adding shared behavior."
+  },
+  {
+    "question": "What is the purpose of the useLayoutEffect hook?",
+    "options": [
+      "To run effects after rendering but before the browser updates the screen",
+      "To manage component state",
+      "To perform side effects after the component mounts",
+      "To fetch data from APIs"
+    ],
+    "answer": "To run effects after rendering but before the browser updates the screen",
+    "explainer": "useLayoutEffect is similar to useEffect but runs synchronously after all DOM mutations, making it useful for reading layout from the DOM."
+  },
+  {
+    "question": "What is the role of the connect function in Redux?",
+    "options": [
+      "To connect components to the Redux store",
+      "To manage component state",
+      "To handle routing",
+      "To perform API requests"
+    ],
+    "answer": "To connect components to the Redux store",
+    "explainer": "The connect function from React Redux is used to connect a React component to the Redux store, allowing it to access state and dispatch actions."
+  },
+  {
+    "question": "How do you handle asynchronous actions in Redux?",
+    "options": [
+      "By using async/await directly in action creators",
+      "By using middleware like redux-thunk",
+      "By dispatching multiple actions sequentially",
+      "By using the useEffect hook"
+    ],
+    "answer": "By using middleware like redux-thunk",
+    "explainer": "Middleware like redux-thunk allows you to write action creators that return functions instead of action objects, enabling asynchronous logic."
+  },
+  {
+    "question": "What does the term 'component lifecycle' refer to?",
+    "options": [
+      "The process of rendering components",
+      "The different phases a component goes through from creation to unmounting",
+      "The styling of components",
+      "The management of component state"
+    ],
+    "answer": "The different phases a component goes through from creation to unmounting",
+    "explainer": "Component lifecycle refers to the sequence of events that occur from the creation to the destruction of a component."
+  },
+  {
+    "question": "How can you prevent a component from rendering unnecessarily?",
+    "options": [
+      "By using shouldComponentUpdate",
+      "By using setState",
+      "By using local storage",
+      "By using the connect function"
+    ],
+    "answer": "By using shouldComponentUpdate",
+    "explainer": "shouldComponentUpdate allows you to control whether a component should re-render based on changes in props or state."
+  },
+  {
+    "question": "What is the purpose of the useImperativeHandle hook?",
+    "options": [
+      "To customize the instance value that is exposed to parent components",
+      "To manage component state",
+      "To handle side effects",
+      "To connect to Redux"
+    ],
+    "answer": "To customize the instance value that is exposed to parent components",
+    "explainer": "useImperativeHandle allows you to customize the value that is exposed when using ref in parent components."
+  },
+  {
+    "question": "What is the significance of the keys prop in dynamic lists?",
+    "options": [
+      "To uniquely identify elements and improve performance",
+      "To manage state",
+      "To handle events",
+      "To style list items"
+    ],
+    "answer": "To uniquely identify elements and improve performance",
+    "explainer": "The keys prop helps React identify which items have changed, been added, or been removed, which optimizes rendering."
+  },
+  {
+    "question": "How can you create a context in React?",
+    "options": [
+      "By using React.createContext",
+      "By using useContext",
+      "By using Redux",
+      "By using component state"
+    ],
+    "answer": "By using React.createContext",
+    "explainer": "React.createContext creates a Context object, which can be used to share values between components without passing props explicitly."
+  },
+  {
+    "question": "What is the purpose of the useReducer hook?",
+    "options": [
+      "To manage local component state with reducers",
+      "To handle side effects",
+      "To connect to Redux",
+      "To fetch data"
+    ],
+    "answer": "To manage local component state with reducers",
+    "explainer": "useReducer is a React hook that allows you to manage complex state logic in functional components using a reducer function."
+  },
+  {
+    "question": "What is the difference between controlled and uncontrolled components?",
+    "options": [
+      "Controlled components are managed by React state; uncontrolled components manage their own state.",
+      "Controlled components are faster; uncontrolled components are slower.",
+      "Controlled components use useState; uncontrolled components do not.",
+      "Controlled components are only for forms; uncontrolled components are for all types."
+    ],
+    "answer": "Controlled components are managed by React state; uncontrolled components manage their own state.",
+    "explainer": "Controlled components receive their current value from props and notify changes through callbacks, while uncontrolled components store their own state."
+  },
+  {
+    "question": "What is the purpose of React Fragments?",
+    "options": [
+      "To return multiple elements without adding extra nodes to the DOM",
+      "To manage component state",
+      "To perform side effects",
+      "To create higher-order components"
+    ],
+    "answer": "To return multiple elements without adding extra nodes to the DOM",
+    "explainer": "React Fragments allow you to group multiple elements without introducing additional DOM elements."
+  },
+  {
+    "question": "What does the term 'props drilling' refer to?",
+    "options": [
+      "The process of passing props from one component to another through multiple levels",
+      "The act of managing local state",
+      "The method of fetching data",
+      "The technique of optimizing performance"
+    ],
+    "answer": "The process of passing props from one component to another through multiple levels",
+    "explainer": "Props drilling occurs when you pass data through several layers of components, which can lead to cumbersome code."
+  },
+  {
+    "question": "How do you create a custom hook in React?",
+    "options": [
+      "By defining a function that uses one or more React hooks",
+      "By using React.createContext",
+      "By using the useEffect hook",
+      "By using the useReducer hook"
+    ],
+    "answer": "By defining a function that uses one or more React hooks",
+    "explainer": "Custom hooks allow you to encapsulate logic and reuse it across components by defining functions that use built-in hooks."
+  },
+  {
+    "question": "What is the role of the Provider component in React context?",
+    "options": [
+      "To render components conditionally",
+      "To provide the context value to its descendants",
+      "To handle state management",
+      "To connect to Redux"
+    ],
+    "answer": "To provide the context value to its descendants",
+    "explainer": "The Provider component makes the context value available to all components within its tree, allowing them to access it."
+  }
+]

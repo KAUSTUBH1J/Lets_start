@@ -1,5 +1,5 @@
 
-import React,{useState, Suspense, lazy} from 'react';
+import React,{useState, Suspense, lazy,createContext} from 'react';
 
 import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import './App.css';
@@ -8,6 +8,9 @@ import './App.css';
 import Navbar from './components/Template/Navbar'
 import LoadingBar from 'react-top-loading-bar'
 
+
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
 
 const Home = lazy(()=>import('./components/Home'))
 const TextArea = lazy(()=>import('./components/Experiment/Textarea'))
@@ -18,9 +21,6 @@ const MCQ_test = lazy(()=>import('./components/Experiment/MCQ_test/test_templete
 const Calculater = lazy(()=>import('./components/Experiment/Calculater'))
 
 
-
-import { store } from './redux/store'
-import { Provider } from 'react-redux'
 
 export const GobleState = createContext(0);
 
