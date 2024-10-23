@@ -1,4 +1,6 @@
+
 import React,{useState, Suspense, lazy} from 'react';
+
 import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
 import './App.css';
 
@@ -16,6 +18,11 @@ const MCQ_test = lazy(()=>import('./components/Experiment/MCQ_test/test_templete
 const Calculater = lazy(()=>import('./components/Experiment/Calculater'))
 
 
+
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
+
+export const GobleState = createContext(0);
 
 function App() {
   const [mode, setMode]   = useState('light');
@@ -50,35 +57,39 @@ function App() {
   }
   return (
     <>
-      <Router>
-        <Navbar Title={projectName} toggle={toggle} mode={mode}/>
-        <LoadingBar
-          color='#f11946'
-          progress={progress}
-          height={3}
-        />
-        <div className='my-3'> 
-          &nbsp;
-        </div>
-        
-        <Suspense fallback='Loading...'>
-        <Routes>
-          <Route path='/' element={<Home setProgressBar={setProgressBar} />}></Route>
-          <Route path='/TextAnalyzer' element={<TextArea setProgressBar={setProgressBar} mode={mode}/>}></Route>
-          <Route path='/about' element={<About setProgressBar={setProgressBar} />}></Route>
-          <Route path='/Calculater' element={<Calculater setProgressBar={setProgressBar} />}></Route>
-          <Route path='/StudentList' element={<StudentListing setProgressBar={setProgressBar} />}></Route>
-          <Route path='/MCQ_test' element={<MCQ_test setProgressBar={setProgressBar} />}></Route>
+      <Router >
+        <Provider store={store}>
+        <GobleState.Provider value={{mode: mode,toggle:toggle}} >
+          <Navbar Title={projectName} />
+          <LoadingBar
+            color='#f11946'
+            progress={progress}
+            height={3}
+          />
+          <div className='my-3'> 
+            &nbsp;
+          </div>
+          
+          <Suspense fallback='Loading...'>
+            <Routes>
+              <Route path='/' element={<Home setProgressBar={setProgressBar} />}></Route>
+              <Route path='/TextAnalyzer' element={<TextArea setProgressBar={setProgressBar} mode={mode}/>}></Route>
+              <Route path='/about' element={<About setProgressBar={setProgressBar} />}></Route>
+              <Route path='/Calculater' element={<Calculater setProgressBar={setProgressBar} />}></Route>
+              <Route path='/StudentList' element={<StudentListing setProgressBar={setProgressBar} />}></Route>
+              <Route path='/MCQ_test' element={<MCQ_test setProgressBar={setProgressBar} />}></Route>
 
-          <Route exact path='business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
-          <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
-          <Route exact path='/general' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="general" pageSize={newsCount} category='general' Title={projectName}/>} />
-          <Route exact path='/health' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="health" pageSize={newsCount} category='health' Title={projectName}/>} />
-          <Route exact path='/science' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="science" pageSize={newsCount} category='science' Title={projectName}/>} />
-          <Route exact path='/sports' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="sports" pageSize={newsCount} category='sports' Title={projectName}/>} />
-          <Route exact path='/technology' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="technology" pageSize={newsCount} category='technology' Title={projectName}/>} />
-        </Routes>
-        </Suspense>
+              <Route exact path='business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
+              <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
+              <Route exact path='/general' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="general" pageSize={newsCount} category='general' Title={projectName}/>} />
+              <Route exact path='/health' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="health" pageSize={newsCount} category='health' Title={projectName}/>} />
+              <Route exact path='/science' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="science" pageSize={newsCount} category='science' Title={projectName}/>} />
+              <Route exact path='/sports' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="sports" pageSize={newsCount} category='sports' Title={projectName}/>} />
+              <Route exact path='/technology' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="technology" pageSize={newsCount} category='technology' Title={projectName}/>} />
+            </Routes>
+          </Suspense>
+        </GobleState.Provider>
+        </Provider>
       </Router>
     </>
   );  
