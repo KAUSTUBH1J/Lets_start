@@ -458,20 +458,18 @@ export default function Test_templete() {
     ];
     const [mcqs, setMcqs] = useState(mcq);
       
-  return (
-    <div className='container'>
-      <h1 className='text-center my-3 p-3'>MCQ Sample Test</h1>
-      
+    return (
+      <div className='container'>
+        <h1 className='text-center my-3 p-3'>MCQ Sample Test</h1>
         {
-            mcqs.map(
-                (question)=>{
-                    return(
-                        <Quetions key={question.question} que={question.question} opt={question.options} ans={question.answer} note={question.explainer}/>
-
-                    )
-                }
-            )
+          mcqs.map(
+            (question)=>{
+              return(
+                <Quetions key={question.question} que={question.question} opt={question.options} ans={question.answer} note={question.explainer}/>
+              )
+            }
+          )
         }
-    </div>
-  )
+      </div>
+    )
 }

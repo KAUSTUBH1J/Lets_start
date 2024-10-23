@@ -1,18 +1,21 @@
-import React,{useState} from 'react';
-
-
-import './App.css';
-import Home from './components/Home';
-import Navbar from './components/Template/Navbar'
-import TextArea from './components/Experiment/Textarea'
-// import Alert from './components/Template/Alert'
-import About from './components/Experiment/About'
+import React,{useState, Suspense, lazy} from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
-import NewsComponents from './components/Experiment/NewsComponents';
+import './App.css';
+
+
+import Navbar from './components/Template/Navbar'
 import LoadingBar from 'react-top-loading-bar'
-import Calculater from './components/Experiment/Calculater';
-import StudentListing from './components/Experiment/StudentListing';
-import MCQ_test from './components/Experiment/MCQ_test/test_templete'
+
+
+const Home = lazy(()=>import('./components/Home'))
+const TextArea = lazy(()=>import('./components/Experiment/Textarea'))
+const About = lazy(()=>import('./components/Experiment/About'))
+const NewsComponents = lazy(()=>import('./components/Experiment/NewsComponents'))
+const StudentListing = lazy(()=>import('./components/Experiment/StudentListing'))
+const MCQ_test = lazy(()=>import('./components/Experiment/MCQ_test/test_templete'))
+const Calculater = lazy(()=>import('./components/Experiment/Calculater'))
+
+
 
 function App() {
   const [mode, setMode]   = useState('light');
@@ -58,7 +61,7 @@ function App() {
           &nbsp;
         </div>
         
-
+        <Suspense fallback='Loading...'>
         <Routes>
           <Route path='/' element={<Home setProgressBar={setProgressBar} />}></Route>
           <Route path='/TextAnalyzer' element={<TextArea setProgressBar={setProgressBar} mode={mode}/>}></Route>
@@ -75,6 +78,7 @@ function App() {
           <Route exact path='/sports' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="sports" pageSize={newsCount} category='sports' Title={projectName}/>} />
           <Route exact path='/technology' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="technology" pageSize={newsCount} category='technology' Title={projectName}/>} />
         </Routes>
+        </Suspense>
       </Router>
     </>
   );  
