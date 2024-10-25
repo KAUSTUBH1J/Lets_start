@@ -9,23 +9,37 @@ const StudentListing = () => {
     };
     const [student, setStudent] = React.useState([]);
     const [rollno, setRollno] = useState(1);
-    const [name, setName] = useState('');
+    const [stuName, setStuName] = useState('');
     const [age, setAge] = useState('');
     
 
     const handleEdit = (rollno) => {
-        var getStud = student.filter(stud => stud.rollNo === rollno);
+        const findIsEdit = student.find((stu) => stu.rollNo === rollno);
+        alert(findIsEdit.isEdit )
+        if(findIsEdit.isEdit){
+            const updateStudentData = student.map((ele)=>{
 
-
-        // if(student.isEdit === 1){
-        //     setStudent({...student,isEdit:0});
-        // }else{
-        //     setStudent({...student,isEdit:1});
-        // }
+                if(ele.rollNo === rollno){
+                    return {...ele, name: stuName,isEdit: !ele.isEdit};
+                }
+                return ele;
+            })
+            console.log(updateStudentData)
+            setStudent(updateStudentData);
+        }else{
+            const updatedStu = student.map((element)=>{
+                if(element.rollNo === rollno){
+                    return {...element, isEdit: !element.isEdit};
+                }
+                return element;
+            })
+            setStudent(updatedStu);
+            console.log(updatedStu);
+        }
     }
     const handleNameChange = (e) =>{
         let value = e.target.value;
-        setName(value);
+        setStuName(value);
     }
     
     const handleAgeChange = (e) =>{
@@ -40,15 +54,15 @@ const StudentListing = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
 
-        if(name && age ){
+        if(stuName && age ){
             let Array ={
                 rollNo  : rollno,
-                name    : name,
+                name    : stuName,
                 age     : age,
-                isEdit  : 1
+                isEdit  : 0
             };
             setRollno(rollno+1)
-            setName('');
+            setStuName('');
             setAge('');
             
             if(student.length === 0){
@@ -63,6 +77,8 @@ const StudentListing = () => {
         }else{
             alert('Please fill the Form ')
         }
+        console.log('student');
+        console.log(student);
     }
 
     return (
@@ -74,7 +90,7 @@ const StudentListing = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label htmlFor="StudentName" className="form-label">Name :</label>
-                            <input type="text" className="form-control" id="StudentName" name='name' aria-describedby="emailHelp" value={name} onChange={handleNameChange }/>
+                            <input type="text" className="form-control" id="StudentName" name='name' aria-describedby="emailHelp" value={stuName} onChange={handleNameChange }/>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputPassword1" className="form-label">Age :</label>
@@ -95,22 +111,17 @@ const StudentListing = () => {
                     <tbody>
                         
                         {
-                            student.map((element)=>{
+                             student.map((element)=>{
                                 const {rollNo, name , age, isEdit} = element;
-                                return (<tr key={element.rollNo}>
-                                    <td>{isEdit?rollNo:<input type='text' className='form-control' name="rollNo" value={rollNo} onChange={handleChage} />}</td>
-                                    <td>{isEdit?name:<input type='text' className='form-control' name="name" value={name} onChange={handleChage} />}</td>
-                                    <td>{isEdit?age:<input type='text' className='form-control' name="age"  value={age} onChange={handleChage} />}</td>
-                                    <td><button className={`btn btn-${isEdit?'primary':'success'}`} onClick={()=>handleEdit(rollNo)}>{element.isEdit?'Edit':'Done'}</button></td>
+                                return (<tr key={rollNo}>
+                                    <td>{rollNo}</td>
+                                    <td>{!isEdit?name:<input type='text' className='form-control' name="name" value={stuName?stuName:name}  onChange={handleNameChange} />}</td>
+                                    <td>{!isEdit?age:<input type='text' className='form-control' name="age"  value={age} onChange={handleChage} />}</td>
+                                    <td><button className={`btn btn-${!isEdit?'primary':'success'}`} onClick={()=>handleEdit(rollNo)}>{!isEdit?'Edit':'Done'}</button></td>
                                 </tr>)
                             })
                         }
-                        {/* <tr>
-                            <td>{student.isEdit?student.rollNo:<input type='text' className='form-control' name="rollNo" value={student.rollNo} onChange={handleChage} />}</td>
-                            <td>{student.isEdit?student.name:<input type='text' className='form-control' name="name" value={student.name} onChange={handleChage} />}</td>
-                            <td>{student.isEdit?student.age:<input type='text' className='form-control' name="age"  value={student.age} onChange={handleChage} />}</td>
-                            <td><button className={`btn btn-${student.isEdit?'primary':'success'}`} onClick={handleEdit}>{student.isEdit?'Edit':'Done'}</button></td>
-                        </tr> */}
+                        
                     </tbody>
                 </table>
             </div>
