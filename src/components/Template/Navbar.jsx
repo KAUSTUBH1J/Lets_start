@@ -26,7 +26,7 @@ export default function Navbar(props) {
                             <li><Link className=" dropdown-item " to="/Calculater">Calculater </Link></li>
                             <li><Link className=" dropdown-item " to="/StudentList">Student List </Link></li>
                             <li><Link className=" dropdown-item " to="/MCQ_test">MCQ Test </Link></li>
-                            
+                            <li><Link className=" dropdown-item " to="/DropDwon">DropDwon</Link></li>
                         </ul>
                     </li>
 

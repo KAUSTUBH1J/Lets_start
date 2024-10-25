@@ -1,5 +1,500 @@
 [
   {
+    "question": "What is the primary purpose of the Context API in React?",
+    "options": [
+      "Managing local state",
+      "Handling routing",
+      "Sharing global data across components",
+      "Optimizing performance"
+    ],
+    "answer": "Sharing global data across components",
+    "explainer": "The Context API is primarily used for sharing data globally across the React component tree."
+  },
+  {
+    "question": "Which of the following is used to create a Context object?",
+    "options": [
+      "createStore()",
+      "createContext()",
+      "createProvider()",
+      "createReducer()"
+    ],
+    "answer": "createContext()",
+    "explainer": "React provides the createContext() function to create a new Context object."
+  },
+  {
+    "question": "What are the two main components of Context API?",
+    "options": [
+      "Provider and Consumer",
+      "State and Reducer",
+      "Component and Function",
+      "Hook and Effect"
+    ],
+    "answer": "Provider and Consumer",
+    "explainer": "The Provider component provides the context value, and the Consumer component consumes it."
+  },
+  {
+    "question": "How do you provide a value to a Context?",
+    "options": [
+      "By passing it as a prop to the Consumer",
+      "By using the Provider component",
+      "By exporting it from the module",
+      "By using the useContext hook"
+    ],
+    "answer": "By using the Provider component",
+    "explainer": "The Provider component is used to supply the context value to the child components."
+  },
+  {
+    "question": "Which hook is used to consume context values in functional components?",
+    "options": [
+      "useContext",
+      "useReducer",
+      "useState",
+      "useEffect"
+    ],
+    "answer": "useContext",
+    "explainer": "useContext hook allows functional components to subscribe to context values."
+  },
+  {
+    "question": "How can you set a default value for a Context?",
+    "options": [
+      "By passing a second argument to createContext()",
+      "By setting a default property on the Provider",
+      "By using the Consumer",
+      "By setting it in the component’s state"
+    ],
+    "answer": "By passing a second argument to createContext()",
+    "explainer": "A default value can be passed as an argument to the createContext() function."
+  },
+  {
+    "question": "What happens if a component does not subscribe to a Context?",
+    "options": [
+      "It will throw an error",
+      "It will not receive updates from the Context",
+      "It will receive the default value",
+      "It will break the application"
+    ],
+    "answer": "It will not receive updates from the Context",
+    "explainer": "If a component does not subscribe to the context, it won't receive any updates."
+  },
+  {
+    "question": "Can you nest multiple Context Providers?",
+    "options": [
+      "No, it's not allowed",
+      "Yes, but only two",
+      "Yes, any number of Providers can be nested",
+      "Only if they share the same value"
+    ],
+    "answer": "Yes, any number of Providers can be nested",
+    "explainer": "Multiple Providers can be nested, allowing for different contexts at different levels."
+  },
+  {
+    "question": "What is the purpose of the value prop in a Provider component?",
+    "options": [
+      "To define the type of context",
+      "To specify the default value",
+      "To provide the current value of the context",
+      "To trigger re-renders"
+    ],
+    "answer": "To provide the current value of the context",
+    "explainer": "The value prop provides the current data of the context to the consumer components."
+  },
+  {
+    "question": "Which statement about Context API is true?",
+    "options": [
+      "It is only for class components",
+      "It can be used for local state management",
+      "It is used for global state management",
+      "It cannot be used with hooks"
+    ],
+    "answer": "It is used for global state management",
+    "explainer": "The Context API is designed for managing global state across the component tree."
+  },
+  {
+    "question": "How do you update context values in a functional component?",
+    "options": [
+      "By directly modifying the context value",
+      "By using a state management approach within the Provider",
+      "By passing new values as props",
+      "By calling a context method"
+    ],
+    "answer": "By using a state management approach within the Provider",
+    "explainer": "Context values can be updated using a state management approach inside the Provider."
+  },
+  {
+    "question": "What will happen if a Consumer component is placed outside of its Provider?",
+    "options": [
+      "It will crash",
+      "It will receive the default context value",
+      "It will not render",
+      "It will throw a warning"
+    ],
+    "answer": "It will receive the default context value",
+    "explainer": "When a Consumer is outside a Provider, it gets the default context value."
+  },
+  {
+    "question": "What is the typical use case for Context API?",
+    "options": [
+      "Passing data between unrelated components",
+      "Local component state management",
+      "Handling side effects",
+      "Managing forms"
+    ],
+    "answer": "Passing data between unrelated components",
+    "explainer": "Context API is typically used to pass data between components that don't have a direct relationship."
+  },
+  {
+    "question": "Which component updates the context value?",
+    "options": [
+      "Consumer",
+      "Provider",
+      "Context",
+      "useContext"
+    ],
+    "answer": "Provider",
+    "explainer": "Only the Provider component can update the context value."
+  },
+  {
+    "question": "Can Context API replace Redux?",
+    "options": [
+      "Yes, in all scenarios",
+      "No, it’s not suitable for complex state management",
+      "Yes, for small applications",
+      "No, it is just a different API"
+    ],
+    "answer": "Yes, for small applications",
+    "explainer": "For small-scale applications, Context API can be an alternative to Redux."
+  },
+  {
+    "question": "What is the main advantage of using Context API?",
+    "options": [
+      "Reducing boilerplate code",
+      "Improved performance",
+      "Better routing capabilities",
+      "Enhanced styling options"
+    ],
+    "answer": "Reducing boilerplate code",
+    "explainer": "Context API helps in reducing the amount of repetitive code when passing props."
+  },
+  {
+    "question": "In which scenario is it recommended to avoid using Context API?",
+    "options": [
+      "When passing down props through many layers",
+      "When you have frequently changing data",
+      "When managing global state",
+      "For static data"
+    ],
+    "answer": "When you have frequently changing data",
+    "explainer": "For rapidly changing data, using Context API may lead to performance issues."
+  },
+  {
+    "question": "How can you provide multiple values using Context API?",
+    "options": [
+      "By creating multiple Contexts",
+      "By using an object as the value",
+      "By nesting Providers",
+      "By using arrays as values"
+    ],
+    "answer": "By using an object as the value",
+    "explainer": "You can pass an object as the value prop to provide multiple values in a single context."
+  },
+  {
+    "question": "Which of the following is NOT a valid way to consume context in class components?",
+    "options": [
+      "Using a static contextType property",
+      "Using Context.Consumer",
+      "Using useContext hook",
+      "By rendering children as a function"
+    ],
+    "answer": "Using useContext hook",
+    "explainer": "The useContext hook is only available in functional components."
+  },
+  {
+    "question": "How do you set context values in a Provider component?",
+    "options": [
+      "Using a global variable",
+      "By passing the value as a prop",
+      "By using a function call",
+      "It’s not possible"
+    ],
+    "answer": "By passing the value as a prop",
+    "explainer": "The value prop is used to set the context value in a Provider."
+  },
+  {
+    "question": "What will happen if you re-render a component that consumes Context?",
+    "options": [
+      "It will not update unless explicitly told",
+      "It will always update if the context value changes",
+      "It will throw an error",
+      "It will render with the default value"
+    ],
+    "answer": "It will always update if the context value changes",
+    "explainer": "Components consuming context will always re-render if the context value changes."
+  },
+  {
+    "question": "What is the function of React.createContext()?",
+    "options": [
+      "To create a new React component",
+      "To create a new Context object",
+      "To create a new state",
+      "To create a new provider"
+    ],
+    "answer": "To create a new Context object",
+    "explainer": "React.createContext() is used to create a new Context object in React."
+  },
+  {
+    "question": "How can you access the context value in a class component?",
+    "options": [
+      "Using useContext hook",
+      "By using this.context",
+      "By using the Consumer component",
+      "By using ContextType"
+    ],
+    "answer": "By using this.context",
+    "explainer": "In class components, you can access the context value using this.context."
+  },
+  {
+    "question": "What is Axios primarily used for?",
+    "options": [
+      "State management",
+      "Making HTTP requests",
+      "Routing",
+      "Styling components"
+    ],
+    "answer": "Making HTTP requests",
+    "explainer": "Axios is primarily used for making HTTP requests to interact with APIs from both the browser and Node.js environments."
+  },
+  {
+    "question": "Which of the following is a feature of Axios?",
+    "options": [
+      "Supports only GET requests",
+      "Automatically converts response data to JSON",
+      "Does not support interceptors",
+      "Only works in Node.js"
+    ],
+    "answer": "Automatically converts response data to JSON",
+    "explainer": "Axios automatically parses and converts the response data to JSON, simplifying handling responses."
+  },
+  {
+    "question": "What method is used to make a GET request using Axios?",
+    "options": [
+      "axios.request()",
+      "axios.get()",
+      "axios.fetch()",
+      "axios.call()"
+    ],
+    "answer": "axios.get()",
+    "explainer": "The axios.get() method is used to make GET requests to a given URL and retrieve data from an API."
+  },
+  {
+    "question": "What is the main difference between Fetch API and Axios?",
+    "options": [
+      "Fetch API is older than Axios",
+      "Axios automatically handles JSON data",
+      "Fetch API cannot handle errors",
+      "Axios only works with React"
+    ],
+    "answer": "Axios automatically handles JSON data",
+    "explainer": "Axios automatically converts response data to JSON, while Fetch requires calling the .json() method to parse the response."
+  },
+  {
+    "question": "How do you handle errors in Axios?",
+    "options": [
+      "Using a try-catch block",
+      "Using .catch() method",
+      "Using the error callback in then()",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "explainer": "Errors in Axios can be handled using try-catch, the .catch() method, or an error callback within then() blocks."
+  },
+  {
+    "question": "What is the default response type of Fetch API?",
+    "options": [
+      "Text",
+      "JSON",
+      "Blob",
+      "FormData"
+    ],
+    "answer": "Text",
+    "explainer": "By default, Fetch API returns responses as plain text, and you need to parse it to JSON using response.json()."
+  },
+  {
+    "question": "Which method is used to make a POST request using Fetch API?",
+    "options": [
+      "fetch.post()",
+      "fetch.request()",
+      "fetch()",
+      "fetch.with()"
+    ],
+    "answer": "fetch()",
+    "explainer": "The fetch() method is used to make both GET and POST requests by specifying the HTTP method in the options object."
+  },
+  {
+    "question": "How do you convert a response to JSON using Fetch API?",
+    "options": [
+      "response.toJSON()",
+      "response.json()",
+      "JSON.parse(response)",
+      "response.parse()"
+    ],
+    "answer": "response.json()",
+    "explainer": "The response.json() method is used to convert a Fetch response into JSON format."
+  },
+  {
+    "question": "What does the baseURL property in Axios do?",
+    "options": [
+      "Sets the default headers",
+      "Defines a default URL for all requests",
+      "Configures error handling",
+      "Sets the timeout for requests"
+    ],
+    "answer": "Defines a default URL for all requests",
+    "explainer": "The baseURL property in Axios is used to define a common base URL for all requests, simplifying API calls."
+  },
+  {
+    "question": "Which of the following is NOT a valid way to cancel a request in Axios?",
+    "options": [
+      "Using a cancel token",
+      "Using abort() method",
+      "Using Promise.all()",
+      "Using the source object"
+    ],
+    "answer": "Using Promise.all()",
+    "explainer": "Promise.all() is used for handling multiple promises, but it is not a valid method for canceling Axios requests."
+  },
+  {
+    "question": "What do you need to include in the options object to send JSON data in a Fetch POST request?",
+    "options": [
+      "headers: { 'Content-Type': 'application/json' }",
+      "method: 'POST'",
+      "body: JSON.stringify(data)",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "explainer": "To send JSON data in a Fetch POST request, you need to set the HTTP method, headers, and the body as a JSON string."
+  },
+  {
+    "question": "What is the function of interceptors in Axios?",
+    "options": [
+      "To handle routing",
+      "To manipulate requests or responses before they are handled",
+      "To manage component lifecycle",
+      "To optimize performance"
+    ],
+    "answer": "To manipulate requests or responses before they are handled",
+    "explainer": "Interceptors in Axios allow you to modify request or response data before they are processed by then() or catch()."
+  },
+  {
+    "question": "How do you set default headers in Axios?",
+    "options": [
+      "axios.defaults.headers",
+      "axios.setHeaders()",
+      "axios.config.headers",
+      "axios.initialize()"
+    ],
+    "answer": "axios.defaults.headers",
+    "explainer": "Default headers in Axios can be set globally using axios.defaults.headers to include them in all requests."
+  },
+  {
+    "question": "Can you use Fetch API in Node.js?",
+    "options": [
+      "Yes, natively",
+      "No, only in the browser",
+      "Yes, but with a polyfill",
+      "Only with Axios"
+    ],
+    "answer": "Yes, but with a polyfill",
+    "explainer": "Fetch API is not natively supported in Node.js, but you can use it with a polyfill like node-fetch."
+  },
+  {
+    "question": "What happens if a request fails in Axios?",
+    "options": [
+      "It throws an error",
+      "It returns a success response",
+      "It automatically retries",
+      "It logs the error to the console"
+    ],
+    "answer": "It throws an error",
+    "explainer": "If a request fails in Axios, it throws an error that can be caught and handled using .catch() or try-catch."
+  },
+  {
+    "question": "What does the credentials option do in Fetch API?",
+    "options": [
+      "It sets the response type",
+      "It includes cookies with the request",
+      "It defines the request timeout",
+      "It sets the request headers"
+    ],
+    "answer": "It includes cookies with the request",
+    "explainer": "The credentials option in Fetch API is used to include credentials like cookies in the request."
+  },
+  {
+    "question": "Which of the following is the correct way to handle asynchronous requests in React?",
+    "options": [
+      "Using setTimeout()",
+      "Using Promises with .then()",
+      "Using async/await",
+      "B and C"
+    ],
+    "answer": "B and C",
+    "explainer": "In React, asynchronous requests can be handled using either Promises with .then() or async/await syntax."
+  },
+  {
+    "question": "In Fetch API, how do you check if the response is successful?",
+    "options": [
+      "response.ok",
+      "response.status === 200",
+      "response.success",
+      "A and B"
+    ],
+    "answer": "A and B",
+    "explainer": "You can check if a Fetch response is successful by using response.ok or checking the status code with response.status."
+  },
+  {
+    "question": "What is the main advantage of using Axios over Fetch?",
+    "options": [
+      "It is more lightweight",
+      "It has built-in support for request and response interceptors",
+      "It is part of the React library",
+      "It requires less code"
+    ],
+    "answer": "It has built-in support for request and response interceptors",
+    "explainer": "One of the key advantages of Axios is its support for interceptors, which allows you to modify requests or responses."
+  },
+  {
+    "question": "How can you handle request timeouts in Axios?",
+    "options": [
+      "Using the timeout property in the config",
+      "Using the setTimeout function",
+      "It is not possible",
+      "By handling errors manually"
+    ],
+    "answer": "Using the timeout property in the config",
+    "explainer": "You can set a timeout in Axios by configuring the timeout property in the request options, which defines the maximum waiting time."
+  },
+  {
+    "question": "How do you send query parameters with Axios?",
+    "options": [
+      "By appending them to the URL",
+      "By passing them in the headers",
+      "Using the params option in the config",
+      "Using a separate method"
+    ],
+    "answer": "Using the params option in the config",
+    "explainer": "Query parameters in Axios can be sent using the params option in the config object, which automatically appends them to the URL."
+  },
+  {
+    "question": "What will happen if you call fetch() without any options?",
+    "options": [
+      "It will send a GET request",
+      "It will send a POST request",
+      "It will throw an error",
+      "It will log a warning"
+    ],
+    "answer": "It will send a GET request",
+    "explainer": "By default, calling fetch() without any options sends a GET request to the provided URL."
+  },
+  {
     "question": "Which of the following is used to style components in React?",
     "options": [
       "CSS Modules",
