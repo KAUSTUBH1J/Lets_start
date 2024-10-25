@@ -17,9 +17,12 @@ const TextArea    = lazy(()=>import('./components/Experiment/Textarea'))
 const About       = lazy(()=>import('./components/Experiment/About'))
 const NewsComponents = lazy(()=>import('./components/Experiment/NewsComponents'))
 const StudentListing = lazy(()=>import('./components/Experiment/StudentListing'))
-const MCQ_test    = lazy(()=>import('./components/Experiment/MCQ_test/test_templete'))
-const Calculater  = lazy(()=>import('./components/Experiment/Calculater'))
-const DropDown    = lazy(()=>import('./components/Experiment/DropDown'))
+
+const DropDown      = lazy(()=>import('./components/Experiment/DropDown'))
+
+const MCQ_test      = lazy(()=>import('./components/Experiment/MCQ_test/test_templete'))
+const Calculater    = lazy(()=>import('./components/Experiment/Calculater'))
+const ProductFilter = lazy(()=> import('./components/Experiment/ProductFilter'))
 
 export const GobleState = createContext(0);
 
@@ -79,6 +82,8 @@ function App() {
               <Route path='/MCQ_test' element={<MCQ_test setProgressBar={setProgressBar} />}></Route>
               <Route path='/DropDwon' element={<DropDown setProgressBar={setProgressBar} />}></Route>
 
+              <Route path='/product-filter' element={<ProductFilter setProgressBar={setProgressBar} />}></Route>
+              
               <Route exact path='business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
               <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
               <Route exact path='/general' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="general" pageSize={newsCount} category='general' Title={projectName}/>} />
