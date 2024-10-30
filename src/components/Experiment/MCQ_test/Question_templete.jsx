@@ -5,7 +5,7 @@ export default function Question_templete(props) {
     const optionBtn = useRef([]);
     const Note = useRef('');
     props.opt.forEach(
-        (_, index) =>{ 
+        (_, index) => { 
             optionBtn.current[index] = optionBtn.current[index] ||  React.createRef();
             // console.log(React.createRef())
         }

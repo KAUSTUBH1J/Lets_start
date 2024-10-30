@@ -24,6 +24,8 @@ const MCQ_test      = lazy(()=>import('./components/Experiment/MCQ_test/test_tem
 const Calculater    = lazy(()=>import('./components/Experiment/Calculater'))
 const ProductFilter = lazy(()=> import('./components/Experiment/ProductFilter'))
 
+const E_commerces = lazy(()=> import('./components/Experiment/E-commerce/home'))
+
 export const GobleState = createContext(0);
 
 function App() {
@@ -83,6 +85,8 @@ function App() {
               <Route path='/DropDwon' element={<DropDown setProgressBar={setProgressBar} />}></Route>
 
               <Route path='/product-filter' element={<ProductFilter setProgressBar={setProgressBar} />}></Route>
+              <Route path='/E-commerce' element={<E_commerces setProgressBar={setProgressBar} />}></Route>
+              
               
               <Route exact path='business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
               <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
