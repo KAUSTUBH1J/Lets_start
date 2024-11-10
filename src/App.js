@@ -27,6 +27,10 @@ const To_Do         = lazy(()=> import('./components/Experiment/To-Do/index'))
 const E_commerces = lazy(()=> import('./components/Experiment/E-commerce/home'))
 const E_commerces_dashbord = lazy(()=> import('./components/Experiment/E-commerce/Admin/Dashbord'))
 const E_commerces_add_item  = lazy(()=> import('./components/Experiment/E-commerce/Admin/AddEditItem'))
+const E_commerces_cart  = lazy(()=> import('./components/Experiment/E-commerce/Cart'))
+
+
+
 export const GobleState = createContext(0);
 
 function App() {
@@ -90,7 +94,9 @@ function App() {
               <Route path='/E-commerce' element={<E_commerces setProgressBar={setProgressBar} />}></Route>
               <Route path='/E-commerce/admin' element={<E_commerces_dashbord setProgressBar={setProgressBar} />}></Route>
               <Route path='/E-commerce/admin/add_item' element={<E_commerces_add_item setProgressBar={setProgressBar} />}></Route>
+              <Route path='/E-commerce/cart' element={<E_commerces_cart setProgressBar={setProgressBar} />}></Route>
 
+              
               <Route exact path='business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
               <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
               <Route exact path='/general' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="general" pageSize={newsCount} category='general' Title={projectName}/>} />

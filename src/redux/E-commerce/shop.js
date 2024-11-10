@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState ={
-    Items: []
+    Items: [],
+    Carts: []
 }
 
 const Shops = createSlice({
@@ -10,14 +11,16 @@ const Shops = createSlice({
     reducers: {
         AddItem: (state,action) => {
             console.log('hello');
-          state.Items.push(action.payload);
-          console.log("action---", action.payload)
+            state.Items.push(action.payload);
+            console.log("action---", action.payload)
         },
-        
+        addToCart:(state,action) =>{
+            state.Carts.push(action.payload);
+        }
     },
 })
 console.log('Actionss ', Shops.initialState);
 
-export const  { AddItem } = Shops.actions;
+export const  { AddItem,addToCart } = Shops.actions;
 
 export default Shops;
