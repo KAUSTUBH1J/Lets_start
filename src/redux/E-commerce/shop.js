@@ -1,21 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState ={
-    value: []
+    Items: []
 }
 
-export default createSlice = createSlice({
-    name: 'counter',
+const Shops = createSlice({
+    name: 'Item',
     initialState,
     reducers: {
-        increment: (state) => {
-          state.value += 1
+        AddItem: (state,action) => {
+            console.log('hello');
+          state.Items.push(action.payload);
+          console.log("action---", action.payload)
         },
-        decrement: (state) => {
-          state.value -= 1
-        },
-        incrementByAmount: (state, action) => {
-          state.value += action.payload
-        },
+        
     },
 })
+console.log('Actionss ', Shops.initialState);
+
+export const  { AddItem } = Shops.actions;
+
+export default Shops;
