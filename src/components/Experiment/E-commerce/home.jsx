@@ -7,7 +7,7 @@ export default function home() {
   //   setProducts(Products);
   //   console.log(products);
 
-  // },[]);
+  // },[]); 
   return (
     <div className='container p-2'>
         <h2 className='text-center'>E-Commerce</h2>
@@ -17,7 +17,7 @@ export default function home() {
         <div className='d-flex justify-content-between flex-wrap items'>
           {
             Products.map((element)=>{
-              return <Product name={element.name} description={element.description} discount_percentage = {element.discount_percentage} price={element.price}/>
+              return <Product name={element.name} description={element.description} discount = {element.discount_percentage} price={element.price}/>
             })
           }
         </div>
