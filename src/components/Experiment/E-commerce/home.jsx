@@ -6,11 +6,11 @@ import Products from './Product.json';
 import { AddItem } from '../../../redux/E-commerce/shop';
 
 export default function Home() {
-  const itemList = useSelector((state)=>state.shops.Items);
-  const Cart = useSelector((state)=>state.shops.Carts);
+  const itemList  = useSelector((state)=>state.shops.Items);
+  const Cart      = useSelector((state)=>state.shops.Carts);
   const cartCount = Cart.length;
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch  = useDispatch();
+  const navigate  = useNavigate();
 
   const handleNavigateCart = () => {
     navigate('/E-commerce/cart');
@@ -21,14 +21,11 @@ export default function Home() {
     if (itemList.length === 0) {
     console.log('Products');
     Products.forEach(element => {
-      console.log(element);
       dispatch(AddItem(element))
     });
   }
 
   },[]); 
-  console.log('itemList');
-  console.log(itemList);
 
 
   return (

@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/E-commerce/shop';
 
 export default function CardProduct(props) {
+  const Navigate = useNavigate();
+
   let {id,name,description, price, discount} = props;
   const dispatch = useDispatch();
 
@@ -10,8 +13,9 @@ export default function CardProduct(props) {
     return (discountedPrice / (1 - (discountPercentage/100))).toFixed(2);
   }
   const handleAddToCart = (id) => {
-    console.log(id);
+
     dispatch(addToCart(id));
+    Navigate('/E-commerce/cart');
   }
   return (
     <div className='m-2'>

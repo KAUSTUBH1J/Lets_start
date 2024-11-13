@@ -15,11 +15,17 @@ const Shops = createSlice({
             console.log("action---", action.payload)
         },
         addToCart:(state,action) =>{
-            state.Carts.push(action.payload);
+            let id = action.payload;
+
+            let obj = {
+                'id': id,
+                'qty': 1
+            }
+            state.Carts.push(obj);
         }
     },
 })
-console.log('Actionss ', Shops.initialState);
+console.log('Actions initialState ', Shops.initialState);
 
 export const  { AddItem,addToCart } = Shops.actions;
 
