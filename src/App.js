@@ -24,12 +24,12 @@ const MCQ_test      = lazy(()=>import('./components/Experiment/MCQ_test/test_tem
 const Calculater    = lazy(()=>import('./components/Experiment/Calculater'))
 const ProductFilter = lazy(()=> import('./components/Experiment/ProductFilter'))
 const To_Do         = lazy(()=> import('./components/Experiment/To-Do/index'))
-const E_commerces = lazy(()=> import('./components/Experiment/E-commerce/home'))
+const E_commerces   = lazy(()=> import('./components/Experiment/E-commerce/home'))
 const E_commerces_dashbord = lazy(()=> import('./components/Experiment/E-commerce/Admin/Dashbord'))
 const E_commerces_add_item  = lazy(()=> import('./components/Experiment/E-commerce/Admin/AddEditItem'))
 const E_commerces_cart  = lazy(()=> import('./components/Experiment/E-commerce/Cart'))
-
-
+const Memo          = lazy(()=>import('./components/Experiment/Memo'))
+const UserDetails          = lazy(()=>import('./components/Experiment/UserDetails'))
 
 export const GobleState = createContext(0);
 
@@ -95,7 +95,8 @@ function App() {
               <Route path='/E-commerce/admin' element={<E_commerces_dashbord setProgressBar={setProgressBar} />}></Route>
               <Route path='/E-commerce/admin/add_item' element={<E_commerces_add_item setProgressBar={setProgressBar} />}></Route>
               <Route path='/E-commerce/cart' element={<E_commerces_cart setProgressBar={setProgressBar} />}></Route>
-
+              <Route path='/Memo' element={<Memo setProgressBar={setProgressBar} />}></Route> 
+              <Route path='/UserDetails' element={<UserDetails setProgressBar={setProgressBar} />}></Route>
               
               <Route exact path='business' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="business" pageSize={newsCount} category='business' Title={projectName} />} />
               <Route exact path='/entertainment' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="entertainment" pageSize={newsCount} category='entertainment' Title={projectName}/>} />
@@ -104,6 +105,8 @@ function App() {
               <Route exact path='/science' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="science" pageSize={newsCount} category='science' Title={projectName}/>} />
               <Route exact path='/sports' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="sports" pageSize={newsCount} category='sports' Title={projectName}/>} />
               <Route exact path='/technology' element={<NewsComponents  ApiKey={APIKey}  setProgressBar={setProgressBar} key="technology" pageSize={newsCount} category='technology' Title={projectName}/>} />
+
+
             </Routes>
           </Suspense>
         </GobleState.Provider>

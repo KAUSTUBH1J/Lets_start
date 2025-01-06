@@ -22,14 +22,16 @@ export default function Navbar(props) {
                             Experiment
                             </a>
                             <ul className="dropdown-menu">
-                                <li><Link className=" dropdown-item " to="/TextAnalyzer">TextAnalyzer</Link></li>
-                                <li><Link className=" dropdown-item " to="/Calculater">Calculater </Link></li>
-                                <li><Link className=" dropdown-item " to="/StudentList">Student List </Link></li>
-                                <li><Link className=" dropdown-item " to="/MCQ_test">MCQ Test </Link></li>
-                                <li><Link className=" dropdown-item " to="/DropDwon">DropDwon</Link></li>
-                                <li><Link className=' dropdown-item ' to='/product-filter'>Product Filter</Link></li>
-                                <li><Link className=' dropdown-item ' to='/To-Do_List'>To-Do List</Link></li>
-                                <li><Link className=' dropdown-item ' to='/E-commerce'>E-commerce</Link></li>
+                                <li><Link className="dropdown-item" to="/TextAnalyzer">TextAnalyzer</Link></li>
+                                <li><Link className="dropdown-item" to="/Calculater">Calculater </Link></li>
+                                <li><Link className="dropdown-item" to="/StudentList">Student List </Link></li>
+                                <li><Link className="dropdown-item" to="/MCQ_test">MCQ Test </Link></li>
+                                <li><Link className="dropdown-item" to="/DropDwon">DropDwon</Link></li>
+                                <li><Link className='dropdown-item' to='/product-filter'>Product Filter</Link></li>
+                                <li><Link className='dropdown-item' to='/To-Do_List'>To-Do List</Link></li>
+                                <li><Link className='dropdown-item' to='/E-commerce'>E-commerce</Link></li>
+                                <li><Link className='dropdown-item' to='/memo'>useMemo</Link></li>
+                                <li><Link className='dropdown-item' to='/UserDetails'>UserDetails</Link></li>
                             </ul>
                         </li>
 

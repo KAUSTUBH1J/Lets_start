@@ -15,7 +15,7 @@ const StudentListing = () => {
 
     const handleEdit = (rollno) => {
         const findIsEdit = student.find((stu) => stu.rollNo === rollno);
-        alert(findIsEdit.isEdit )
+
         if(findIsEdit.isEdit){
             const updateStudentData = student.map((ele)=>{
 

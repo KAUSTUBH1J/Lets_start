@@ -15,7 +15,6 @@ export default function Index () {
             dispatch(addTodo({id: Date.now(),   text:todo}));
             setTodo('');
         }
-
     }
 
     const handleDelete = (id) =>{
