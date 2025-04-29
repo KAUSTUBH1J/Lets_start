@@ -11,10 +11,11 @@ export default function Popupmodel(props){
         course  : '',
         gender  : '',
     });
-
+        
     useEffect(()=>{
         setFormData(props.data)
-    },[props.data])
+    },[props.data]);
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -27,11 +28,11 @@ export default function Popupmodel(props){
         let isError = false;
 
         let validationErrors = {
-            name: '',
-            email: '',
-            age: '',
-            course: '',
-            gender: '',
+            name    : '',
+            email   : '',
+            age     : '',
+            course  : '',
+            gender  : '',
         }
 
         // Name validation
@@ -39,7 +40,7 @@ export default function Popupmodel(props){
             validationErrors.name = 'Name is required.';
             isError = true;
         }
-    
+        
         // Email validation
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!formData.email.trim()) {
@@ -84,11 +85,11 @@ export default function Popupmodel(props){
 
             // Reset form
             setFormData({
-                name: '',
-                email: '',
-                age: '',
-                course: '',
-                gender: '',
+                name    : '',
+                email   : '',
+                age     : '',
+                course  : '',
+                gender  : '',
             });
             props.handleClose();
         }
